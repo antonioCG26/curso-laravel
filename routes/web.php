@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\TestController; //forma una de cargar controllers
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('welcome');
 });
+
+Route::get('/escribeme', function () {
+    return "contactame";
+}) ->name ("contacto"); //ruta con nombreph
+
+Route::get('/custom', function () {
+    $nombre ="antonio de jesus";
+    $apellido ="cruz guerrero";
+    $telefono ="4499303065";
+    $direccion = "nacionalismo 194";
+    $data= ['nombre' => $nombre,"apellido" => $apellido,"telefono" => $telefono,"direccion" => $direccion];
+    return view ('custom',$data);
+});
+
+route::get('/test',[TestController::class,'test']);
+
+
+
+
