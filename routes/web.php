@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Seccion2Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController; //forma una de cargar controllers
 /*
@@ -30,8 +31,9 @@ Route::get('/custom', function () {
     return view ('custom',$data);
 });
 
-route::get('/test',[TestController::class,'test']);
+Route::get('/test',[TestController::class,'test']);
 
+Route::get("/seccion2",[Seccion2Controller::class,"index"]);
 
 
 
