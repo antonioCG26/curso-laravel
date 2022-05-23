@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
+
+
     {{$name}}<br>
      {{$age}}<br>
      
@@ -30,11 +32,12 @@
 @unless (Auth::check())
     You are not signed in.
 @endunless
-
+<hr>
 @foreach($array as $a)
 <div class="box item">
-    <h4>{{$a}}</h4>
+    @include("fragmentos.subview")
 @endforeach
+<hr>
 @for ($i = 0; $i < count($array); $i++)
     @if($i%2==0)
         <b>{{$array[$i]}}</b><br>
@@ -42,6 +45,7 @@
         {{$array[$i]}}<br>
     @endif
 @endfor
+<hr>
 @php 
     $array =[];
 @endphp

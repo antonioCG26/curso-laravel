@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\dashboard;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class Seccion2Controller extends Controller
@@ -13,7 +14,7 @@ class Seccion2Controller extends Controller
      */
     public function index()
     {
-        return view("index",["name"=>"antonio","age"=>"17","html"=>"<h1>Titulo</h1>","array"=>["antonio cruz",4499303065,"nacionalismo #194","aguascalientes","34"]]);
+        return view("dashboard/test/index",["name"=>"antonio","age"=>"17","html"=>"<h1>Titulo</h1>","array"=>["antonio cruz",4499303065,"nacionalismo #194","aguascalientes","34"]]);
     }
 
     /**

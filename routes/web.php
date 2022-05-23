@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\Seccion2Controller;
+use App\Http\Controllers\dashboard\Seccion2Controller;
+use App\Http\Controllers\dashboard\Seccion3Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController; //forma una de cargar controllers
 /*
@@ -14,8 +15,9 @@ use App\Http\Controllers\TestController; //forma una de cargar controllers
 |
 */
 
-Route::get('/home', function () {
-    return view('welcome');
+Route::get('/', function () {
+    //return view('welcome');
+    echo "pagina principal";
 });
 
 Route::get('/escribeme', function () {
@@ -35,5 +37,5 @@ Route::get('/test',[TestController::class,'test']);
 
 Route::get("/seccion2",[Seccion2Controller::class,"index"]);
 
-
+Route::get("/seccion3",[Seccion3Controller::class,"index"]);
 
